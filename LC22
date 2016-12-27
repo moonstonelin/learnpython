@@ -1,0 +1,24 @@
+class Solution(object):
+    def generateparenthesis(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        ans = []
+        ss = ''
+        self.help(n, n, ss, ans)
+        return ans
+
+    def help(self, left, right, ss, ans):
+        if left == 0 and right == 0:
+            ans.append(ss)
+            return
+
+        if left > 0:
+            self.help(left-1, right, ss + '(', ans)
+
+        if left < right:
+            self.help(left, right-1, ss + ')', ans)
+
+s = Solution()
+print s.generateparenthesis(3)
