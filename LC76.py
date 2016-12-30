@@ -11,11 +11,11 @@ class Solution(object):
 
         tdict = {}
         sdict = {}
-        for i in range(len(t)):
-            if t[i] not in tdict.keys():
-                tdict.setdefault(t[i], 0)
-                sdict.setdefault(t[i], 0)
-            tdict[t[i]] += 1
+        for c in t:
+            if c not in tdict:
+                tdict.setdefault(c, 0)
+                sdict.setdefault(c, 0)
+            tdict[c] += 1
 
         count = 0
         start = 0
